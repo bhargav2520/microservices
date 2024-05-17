@@ -12,7 +12,7 @@ import java.util.List;
 public class jobController {
  public  List<Job> jobs=new ArrayList<>();
 
-
+// hello bargav
  @GetMapping("/jobs")
  public List<Job> findAll(){
      return jobs;
@@ -21,7 +21,7 @@ public class jobController {
  @PostMapping("/jobs")
 
     public String create(@RequestBody Job job){
-     jobs.add(job);
+     jobs.add(job); //Error here Fix it
      return "added successfull";
  }
 
