@@ -1,13 +1,39 @@
 package com.microservices.microservices.Controller;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.microservices.microservices.Controller.Company.Company;
+import jakarta.persistence.*;
+
+@Entity
+//@Table(name="job_table")
+
 public class Job {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
     private String minsalary;
     private String maxsalary;
     private String location;
+
+
+    @ManyToOne
+    private Company company;
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+
+    public Job(){
+
+    }
 
     public Long getId() {
         return id;
