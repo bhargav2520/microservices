@@ -20,7 +20,7 @@ public class CompanyController {
         return new ResponseEntity<>(companyService.getAllCompanies(),
                 HttpStatus.OK);
     }
-
+//bhargav
     @PutMapping("/{id}")
     public ResponseEntity<String> updateCompany(@PathVariable Long id,
                                                 @RequestBody Company company){
